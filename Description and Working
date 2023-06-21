@@ -1,0 +1,83 @@
+Import the required libraries:
+
+1.time: Provides functions for dealing with time-related operations.
+2.smtplib: Enables sending emails using the Simple Mail Transfer Protocol (SMTP).
+3.openpyxl: Allows manipulation of Excel files.
+4.Tk, Label, Button, messagebox from tkinter: Used for creating a graphical user interface (GUI).
+5.ttk from tkinter: Provides themed widgets for the GUI.
+6.webdriver from selenium: Automates web browser actions.
+7.Keys from selenium.webdriver.common.keys: Provides keyboard keys for interacting with web elements.
+8.Fernet from cryptography.fernet: Implements the Fernet symmetric encryption algorithm.
+9.schedule: Enables scheduling tasks at specified intervals.
+
+Define the encrypt_credentials function:
+
+Encrypts the LinkedIn credentials (username and password) using a provided key.
+Define the decrypt_credentials function:
+
+Decrypts the encrypted LinkedIn credentials using a provided key.
+Define the get_unread_notification_count function:
+
+Launches a web browser (Google Chrome in this case) using Selenium.
+Navigates to the LinkedIn login page.
+Enters the username and password into the respective input fields.
+Presses the ENTER key to submit the form.
+Waits for 5 seconds for the page to load.
+Retrieves the unread notification count from the page.
+Quits the web browser.
+Define the get_unread_message_count function:
+
+Similar to the get_unread_notification_count function, but retrieves the unread message count from the page.
+Define the send_email_notification function:
+
+Establishes a connection with the SMTP server (in this case, Gmail's SMTP server) using the provided sender email and password.
+Sends an email containing the provided message from the sender email to the recipient email.
+Define the on_notify_click function:
+
+This function is called when the "Send Notification" button is clicked in the GUI.
+Sets up the encryption key for LinkedIn credentials.
+Encrypts the LinkedIn username and password.
+Decrypts the encrypted LinkedIn credentials.
+Sets up the email credentials (sender email, sender password, and recipient email).
+Retrieves the current unread counts of notifications and messages from LinkedIn.
+Loads the previous counts from an Excel file.
+Saves the current counts to the Excel file for future usage.
+Constructs the email body with the current and previous counts.
+Constructs the email message with the email body.
+Sends the email notification.
+Displays a message box with the notification confirmation.
+Define the schedule_notifications function:
+
+Uses the schedule library to schedule the on_notify_click function to run every 3 hours.
+Runs the scheduled tasks in an infinite loop.
+Sleeps for 1 second in each iteration to allow other tasks to run.
+Define the create_gui function:
+
+Creates a GUI window using Tk from tkinter.
+Adds a title label and a "Send Notification" button to the window.
+Binds the button click event to the on_notify_click function.
+Runs the GUI window.
+Call the create_gui function to start the GUI.
+
+Call the schedule_notifications function to start scheduling the notifications.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Fields that need to be filled in the code for it to work:
+
+LinkedIn Credentials:
+
+Replace 'your_linkedin_username' with your actual LinkedIn username.
+Replace 'your_linkedin_password' with your actual LinkedIn password.
+Email Credentials:
+
+Replace 'your_sender_email@gmail.com' with your actual sender email address.
+Replace 'your_sender_email_password' with your actual sender email password.
+Replace 'your_recipient_email@gmail.com' with the recipient email address where you want to receive the notifications.
+Encryption Key:
+
+Replace 'your_secret_key' with your own secret key.
+Excel File:
+
+The code assumes that there is an Excel file named 'linkedin_counts.xlsx' in the same directory. If you want to use a different file name or path, you can modify the excel_file variable accordingly.
+
+ 
+ 
